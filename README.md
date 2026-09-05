@@ -86,8 +86,8 @@ User Input ──► Outer Interactive Loop (Terminal Session)
                     ▼
          Inner Tool Resolution Loop (ReAct)
    ┌──────────────────────────────────────────────┐
-   │ • Path Sanitizer (Workspace Boundary Check)   │
-   │ • HITL Gatekeeper (Destructive Action Guard)  │
+   │ • Path Sanitizer (Workspace Boundary Check)  │
+   │ • HITL Gatekeeper (Destructive Action Guard) │
    │ • Tool Execution:                            │
    │   - look_inside_folder()                     │
    │   - read_file()                              │
