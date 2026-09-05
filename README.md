@@ -1,6 +1,6 @@
 # ⚡ DevPulse - Autonomous Local Terminal Coding Assistant
 
-DevPulse is a production-grade, autonomous CLI coding assistant powered by the **Google Gemini API** (`gemini-3.6-flash`). Built on an iterative **ReAct (Reasoning + Acting)** execution loop, DevPulse bridges remote model reasoning with local filesystem execution while enforcing strict security guardrails, memory summarization, and human-in-the-loop controls.
+DevPulse is a production-grade, autonomous CLI coding assistant powered by the **Google Gemini API** (`gemini-3.5-flash`). Built on an iterative **ReAct (Reasoning + Acting)** execution loop, DevPulse bridges remote model reasoning with local filesystem execution while enforcing strict security guardrails, memory summarization, and human-in-the-loop controls.
 
 ---
 
@@ -54,7 +54,10 @@ Create a .env file in the project root:
 Code snippet
 GEMINI_API_KEY=your_gemini_api_key_here
 
-💻 Usage
+---
+
+## 💻 Usage
+
 Launch DevPulse from your project terminal:
 
 Bash
@@ -68,7 +71,10 @@ tokens: View cumulative prompt, generated, and total session token counts.
 
 exit or quit: Display the final token report and terminate the session.
 
-📂 Architecture Overview
+---
+
+## 📂 Architecture Overview
+
 Plaintext
 User Input ──► Outer Interactive Loop (Terminal Session)
                     │
@@ -92,5 +98,11 @@ User Input ──► Outer Interactive Loop (Terminal Session)
                     │
                     ▼
        Tool Response Fed Back to Gemini Context
-📄 License
+
+---
+
+## 📄 License
+
 MIT License. Free for local development and personal coding workflows.
+
+---
