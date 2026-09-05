@@ -75,11 +75,11 @@ exit or quit: Display the final token report and terminate the session.
 
 ## 📂 Architecture Overview
 
-Plaintext
+```text
 User Input ──► Outer Interactive Loop (Terminal Session)
                     │
                     ▼
-         Gemini 3.5 Flash (Reasoning & Intent)
+         Gemini 3.6 Flash (Reasoning & Intent)
                     │
            Function Call Request
                     │
@@ -98,6 +98,7 @@ User Input ──► Outer Interactive Loop (Terminal Session)
                     │
                     ▼
        Tool Response Fed Back to Gemini Context
+```
 
 ---
 
