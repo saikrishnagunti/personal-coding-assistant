@@ -1,0 +1,252 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #05050a;
+    color: #fff;
+    font-family: 'Press Start 2P', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* Arcade Cabinet Container */
+.arcade-container {
+    background-color: #0c0c14;
+    border: 4px solid #111;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.2),
+                inset 0 0 15px rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Header Styling */
+.arcade-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.arcade-header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+.cabinet-decor {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.decor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ffb8ae;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ffb8ae;
+}
+
+/* Neon Text Effects */
+.neon-text-yellow {
+    color: #ffff00;
+    text-shadow: 0 0 8px rgba(255, 255, 0, 0.8), 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+.neon-text-blue {
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8), 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.neon-text-red {
+    color: #ff0000;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.neon-text-green {
+    color: #00ff00;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.8), 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+/* Scoreboard */
+.scoreboard {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.score-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-box .label {
+    font-size: 0.6rem;
+    color: #888;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.score-box .value {
+    font-size: 0.9rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.lives-icons {
+    display: flex;
+    gap: 6px;
+    height: 14px;
+    align-items: center;
+}
+
+.lives-icons .life-icon {
+    width: 14px;
+    height: 14px;
+    background-color: #ffff00;
+    border-radius: 50%;
+    clip-path: polygon(100% 74%, 50% 50%, 100% 26%, 100% 0%, 0% 0%, 0% 100%, 100% 100%);
+    transform: rotate(-30deg);
+}
+
+/* Game Screen Area */
+.game-screen {
+    position: relative;
+    background-color: #000;
+    border: 4px solid #1111ff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+    overflow: hidden;
+    width: 532px;
+    height: 588px;
+}
+
+canvas {
+    display: block;
+}
+
+/* Overlays (Start, Game Over, Victory, Pause) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.hidden {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.overlay p {
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.overlay .instructions {
+    margin-top: 30px;
+    border-top: 1px dashed #444;
+    padding-top: 15px;
+    color: #aaa;
+}
+
+.overlay .instructions p {
+    margin-bottom: 8px;
+}
+
+/* Blinking Text Animation */
+.blink-text {
+    animation: blink 1.2s infinite;
+    color: #ffb8ae;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Footer Styling */
+.arcade-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.55rem;
+    color: #666;
+}
+
+.sound-toggle {
+    color: #888;
+}
+
+.sound-toggle span {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.credits {
+    letter-spacing: 1px;
+}
+
+/* Responsive Scaling for smaller screens */
+@media (max-width: 600px) {
+    .arcade-container {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .arcade-header h1 {
+        font-size: 1.5rem;
+    }
+    .game-screen {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 19 / 21;
+    }
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+    .overlay h2 {
+        font-size: 1.4rem;
+    }
+    .overlay p {
+        font-size: 0.6rem;
+    }
+}

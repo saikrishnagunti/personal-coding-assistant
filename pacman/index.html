@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Pac-Man Arcade</title>
+    <!-- Retro Arcade Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="arcade-container">
+        <!-- Cabinet Header -->
+        <div class="arcade-header">
+            <h1 class="neon-text-yellow">PAC-MAN</h1>
+            <div class="cabinet-decor">
+                <span class="decor-dot"></span>
+                <span class="decor-dot"></span>
+                <span class="decor-dot"></span>
+            </div>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <div class="score-box">
+                <div class="label">1UP</div>
+                <div id="score" class="value">000000</div>
+            </div>
+            <div class="score-box">
+                <div class="label">HIGH SCORE</div>
+                <div id="high-score" class="value">000000</div>
+            </div>
+            <div class="score-box">
+                <div class="label">LIVES</div>
+                <div id="lives-container" class="lives-icons">
+                    <!-- Lives icons will be generated dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen Area -->
+        <div class="game-screen">
+            <canvas id="gameCanvas" width="532" height="588"></canvas>
+
+            <!-- Start Screen Overlay -->
+            <div id="start-screen" class="overlay">
+                <h2 class="neon-text-blue">READY?</h2>
+                <p class="blink-text">PRESS ENTER OR CLICK TO PLAY</p>
+                <div class="instructions">
+                    <p>CONTROLS:</p>
+                    <p>ARROW KEYS or WASD to Move</p>
+                    <p>M to Mute/Unmute Sound</p>
+                </div>
+            </div>
+
+            <!-- Game Over Screen Overlay -->
+            <div id="game-over-screen" class="overlay hidden">
+                <h2 class="neon-text-red">GAME OVER</h2>
+                <p id="final-score-text">SCORE: 0</p>
+                <p class="blink-text">PRESS ENTER TO RESTART</p>
+            </div>
+
+            <!-- Victory Screen Overlay -->
+            <div id="victory-screen" class="overlay hidden">
+                <h2 class="neon-text-green">VICTORY!</h2>
+                <p>YOU CLEARED THE MAZE!</p>
+                <p class="blink-text">PRESS ENTER FOR NEXT LEVEL</p>
+            </div>
+
+            <!-- Pause Screen Overlay -->
+            <div id="pause-screen" class="overlay hidden">
+                <h2 class="neon-text-yellow">PAUSED</h2>
+                <p>PRESS ESC TO RESUME</p>
+            </div>
+        </div>
+
+        <!-- Cabinet Footer / Controls Info -->
+        <div class="arcade-footer">
+            <div class="sound-toggle">
+                Sound: <span id="sound-status">ON</span> (Press M)
+            </div>
+            <div class="credits">© 2024 DEVPULSE ARCADE</div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
