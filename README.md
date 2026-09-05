@@ -61,8 +61,7 @@ A sleek, modern, and responsive calculator web application.
 Launch DevPulse from your terminal:
 
 ```bash
-python main.py
-```
+python DevPulse.py
 
 Once running, you can interactively give instructions such as:
 - *"Explore the repository and create a README file."*
